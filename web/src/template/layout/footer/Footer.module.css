@@ -1,0 +1,7 @@
+.fluid {
+	display: flex;
+	align-items: center;
+	padding: 12px 15px;
+	justify-content: center;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

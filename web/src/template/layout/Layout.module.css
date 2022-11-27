@@ -1,0 +1,17 @@
+.header {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 9;
+	background-color: #fff;
+}
+.bodyWrapper {
+	padding: 92px 0px 40px;
+}
+.footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	z-index: 9;
+	background-color: #fff;
+}

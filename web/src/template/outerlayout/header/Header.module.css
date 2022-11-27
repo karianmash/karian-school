@@ -1,0 +1,25 @@
+.fluid {
+	display: flex;
+	align-items: center;
+	padding: 8px 15px;
+	justify-content: space-between;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.logo img {
+	width: 100%;
+	max-width: 190px;
+}
+.headerLinks {
+	list-style: none;
+}
+.headerLinks li {
+	display: inline-block;
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 600;
+	margin: 0px 8px;
+}
+.headerLinks li a {
+	color: #000;
+	text-decoration: none;
+}

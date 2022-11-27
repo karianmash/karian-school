@@ -1,0 +1,69 @@
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 30px 15px;
+}
+.title {
+	font-size: 36px;
+	line-height: 1.2;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+.banner {
+	background-image: url("../../../images/banner.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	padding: 70px 30px;
+}
+.bannerContent {
+	position: relative;
+	color: #fff;
+}
+.bannerContent .title {
+	font-size: 3.5rem;
+	line-height: 1.2;
+	margin-bottom: 20px;
+}
+.container > .btnWrapper {
+	text-align: right;
+	margin-bottom: 25px;
+}
+.container > .btnWrapper button {
+	background-color: cadetblue;
+}
+.clubCard {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 20px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	margin: 8px 0px;
+}
+.btnWrapper button {
+	border: none;
+	padding: 8px 25px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	margin-left: 8px;
+	border-radius: 8px;
+}
+.btnWrapper .join {
+	background-color: cadetblue;
+}
+.btnWrapper .exit {
+	background-color: #ff0000;
+}
+form .btn {
+	display: flex;
+	justify-content: flex-end;
+  }
+  form .btns {
+	align-items: center;
+	text-align: center;
+	padding: 12px;
+  }
