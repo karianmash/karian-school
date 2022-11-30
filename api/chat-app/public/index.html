@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat App</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="centered-form">
+      <div class="centered-form__box">
+        <h1>Start Chat</h1>
+        <form action="/chat.html">
+          <label for="username">Student name</label>
+          <select
+            name="username"
+            style="
+              width: 100%;
+              height: 2.5rem;
+              outline: none;
+              border: 1px solid #eeeeee;
+              font-size: 0.9rem;
+              background-color: #ffffff;
+              padding-left: 0.3rem;
+            "
+            required
+          >
+            <option value="" selected disabled>--Display name--</option>
+            <!-- Users Here -->
+          </select>
+
+          <label for="room">Room name</label>
+          <input
+            type="text"
+            name="room"
+            placeholder="Room"
+            value="My Room"
+            required
+          />
+          <button>Join</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      fetch("http://127.0.0.1:8000/api/users/Student")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          let selectElement = document.getElementsByName("username")[0];
+
+          data.users.forEach((user) => {
+            let userName = user.first_name + " " + user.second_name;
+
+            let opt = document.createElement("option");
+            opt.setAttribute("id", `${user.email}`);
+            opt.value = userName;
+            opt.innerHTML = userName;
+
+            selectElement.appendChild(opt);
+          });
+        });
+    </script>
+  </body>
+</html>

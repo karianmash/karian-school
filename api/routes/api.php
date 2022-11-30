@@ -33,6 +33,7 @@ Route::controller(ProductsController::class)->group(function () {
     Route::post('product/{id}', 'UpdateProduct');
     Route::delete('product/{id}', 'DropProduct');
 });
+
 Route::controller(AdvertisementsController::class)->group(function () {
     Route::post('advert', 'SaveAdvert');
     Route::get('advert/{id}', 'ViewProduct');
@@ -41,6 +42,7 @@ Route::controller(AdvertisementsController::class)->group(function () {
     Route::delete('advert/{id}', 'DeleteAdvert');
     Route::get('advert/user/{user_id}', 'MyAdverts');
 });
+
 Route::controller(ClubsController::class)->group(function () {
     Route::post('club', 'StoreClub');
     Route::get('club/{id}', 'ViewClub');
@@ -49,6 +51,7 @@ Route::controller(ClubsController::class)->group(function () {
     Route::delete('club/{id}', 'DeleteClub');
     Route::get('club/{user_id}', 'GetMyClubs');
 });
+
 Route::controller(OrdersController::class)->group(function () {
     Route::post('order', 'AdOrder');
     Route::get('order/{transaction_id}', 'GetCart');
