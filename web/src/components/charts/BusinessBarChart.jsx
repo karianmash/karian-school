@@ -44,7 +44,11 @@ function BarChart() {
         text: "Bar Chart",
       },
     },
-    responsive: true,
+    scale: {
+      ticks: {
+        precision: 0,
+      },
+    },
     maintainAspectRatio: false,
   };
 
