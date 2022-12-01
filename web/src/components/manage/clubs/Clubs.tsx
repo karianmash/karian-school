@@ -7,6 +7,7 @@ const Clubs = () => {
   const navigate = useNavigate();
   const loggedUser = JSON.parse(localStorage.getItem("user") || "{}");
   const baseUrl = "http://localhost:8000/api/";
+  const imageUrl = "http://localhost:8000/uploads/";
   const [clubs, setClubs] = useState<any[]>([]);
 
   useEffect(() => {
@@ -34,6 +35,11 @@ const Clubs = () => {
 
   const clubList = clubs.map((club) => (
     <div className={styles.clubCard} key={club.id}>
+      <img
+        src={imageUrl + club.image}
+        alt="Club"
+        style={{ width: "auto", height: "6rem" }}
+      />
       <h5>{club.name}</h5>
       <h5>{club.detail}</h5>
       <div className={styles.btnWrapper}>

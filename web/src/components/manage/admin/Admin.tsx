@@ -115,7 +115,8 @@ const Admin = () => {
           <button onClick={fetchUsers} user-role={"business"}>
             Business Owners
           </button>
-          <button>Clubs & Posts</button>
+
+          {/* <button>Clubs & Posts</button> */}
         </div>
 
         <div className={styles.clubWrapper}>
