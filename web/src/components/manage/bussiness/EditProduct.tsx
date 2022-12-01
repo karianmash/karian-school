@@ -40,20 +40,24 @@ const EditProduct = () => {
   const saveClub = async (e: any) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("name", name);
-    formData.append("detail", detail);
     formData.append("image", image);
+    formData.append("price", price);
+    formData.append("categories_id", category);
+    formData.append("user_id", loggedUser.id);
 
     const saveResponse = await axios.post(
       baseUrl + "product/" + product,
       formData
     );
+
+    console.log(saveResponse);
+
     if (saveResponse.status == 200) {
-      setUserMessage("Club updated successfully");
+      setUserMessage("Product updated successfully");
       setTimeout(() => {
         setUserMessage("");
-        navigate("/clubs");
-      }, 3000);
+        navigate("/business");
+      }, 2000);
     }
   };
 
@@ -96,42 +100,15 @@ const EditProduct = () => {
               </select>
             </div>
 
-            <div className={styles.field}>
-              <label>Name</label>
-              <input
-                type="text"
-                name="Name"
-                placeholder="Enter Club Name"
-                required
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              />
-            </div>
-            <div className={styles.field}>
-              <label>Club Image</label>
+            <div className={styles.field} style={{ marginTop: "1.5rem" }}>
+              <label>product Image</label>
               <input
                 type="file"
-                name="imgData"
+                name="image"
                 id="upload"
                 onChange={handleDataOnChange}
                 accept="image/*"
                 required
-              />
-            </div>
-
-            <div className={styles.field}>
-              <label>Description</label>
-              <input
-                type="textarea"
-                name="description"
-                placeholder="Enter Club Description"
-                required
-                onChange={(e) => {
-                  setDetail(e.target.value);
-                }}
-                value={detail}
               />
             </div>
 
