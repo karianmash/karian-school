@@ -6,51 +6,53 @@ import axios from "axios";
 
 const ProductForm = () => {
   const navigate = useNavigate();
-  const currentUser = JSON.parse(localStorage.getItem('user') || '{}');
+  const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
   const role = currentUser.role;
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [image, setImage] = useState('');
-  const [category, setCategory] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+  const [category, setCategory] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     redirectUser();
   }, []);
   const redirectUser = () => {
-    if (role !== 'business') {
+    if (role !== "business") {
       navigate(-1);
     }
-  }
-
+  };
 
   const handleDataOnChange = (e: any) => {
     setImage(e.target.files[0]);
   };
 
-  const saveProduct = async (e: { preventDefault: () => void; }) => {
+  const saveProduct = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('name', name);
-    formData.append('price', price);
-    formData.append('description', description);
-    formData.append('image', image);
-    formData.append('categories_id', category);
-    formData.append('user_id', currentUser.id);
+    formData.append("name", name);
+    formData.append("price", price);
+    formData.append("description", description);
+    formData.append("image", image);
+    formData.append("categories_id", category);
+    formData.append("user_id", currentUser.id);
 
-    const response = await axios.post('http://localhost:8000/api/product', formData);
+    const response = await axios.post(
+      "http://localhost:8000/api/product",
+      formData
+    );
     if (response.status == 200) {
       // console.log(response);
-      setMessage('Product added Successfully')
+      setMessage("Product added Successfully");
       setTimeout(() => {
-        navigate('/business');
+        navigate("/business");
       }, 200);
     }
-  }
+  };
   const navigateBack = (e: any) => {
-    navigate('/business');
-  }
+    navigate("/business");
+  };
 
   return (
     <div>
@@ -61,11 +63,21 @@ const ProductForm = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.formContainer}>
-          <div style={{ marginBottom: '5px' }}>{message}</div>
+          <div style={{ marginBottom: "5px" }}>{message}</div>
           <form onSubmit={saveProduct}>
             <div className={styles.field}>
-              <select name="category" defaultValue={category} onChange={(e) => { setCategory(e.target.value) }} id="category" style={{ padding: '7px', borderRadius: '5px' }}>
-                <option value="0" disabled>Product Category</option>
+              <select
+                name="category"
+                defaultValue={category}
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                }}
+                id="category"
+                style={{ padding: "7px", borderRadius: "5px" }}
+              >
+                <option value="0" disabled>
+                  Product Category
+                </option>
                 <option value="1">Fashion</option>
                 <option value="2">Electronics</option>
                 <option value="3">Furniture</option>
@@ -79,7 +91,9 @@ const ProductForm = () => {
                 type="text"
                 name="Product Name"
                 value={name}
-                onChange={(e) => { setName(e.target.value) }}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
                 placeholder="Enter Product Name"
               />
             </div>
@@ -89,7 +103,9 @@ const ProductForm = () => {
                 type="text"
                 name="Product Description"
                 value={description}
-                onChange={(e) => { setDescription(e.target.value) }}
+                onChange={(e) => {
+                  setDescription(e.target.value);
+                }}
                 placeholder="Enter Product Description"
               />
             </div>
@@ -99,7 +115,7 @@ const ProductForm = () => {
                 type="file"
                 name="imgData"
                 id="upload"
-                onChange={(handleDataOnChange)}
+                onChange={handleDataOnChange}
                 accept="image/*"
               />
             </div>
@@ -109,13 +125,17 @@ const ProductForm = () => {
                 type="number"
                 name="price"
                 value={price}
-                onChange={(e) => { setPrice(e.target.value) }}
+                onChange={(e) => {
+                  setPrice(e.target.value);
+                }}
                 placeholder="Enter Price Of The Product"
               />
             </div>
             <div className={styles.btn}>
               <div className={styles.btns}>
-                <button onClick={navigateBack} type="button">Go back</button>
+                <button onClick={navigateBack} type="button">
+                  Go back
+                </button>
               </div>
               <div className={styles.btns}>
                 <button type="submit">Add</button>

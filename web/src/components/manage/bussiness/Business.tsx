@@ -42,9 +42,15 @@ const Business = () => {
       <h5>{product.name}</h5>
       <h5>{product.description}</h5>
       <div className={productstyles.btnWrapper}>
-        {/* <button className={productstyles.join}
-					onClick={() => navigate("/Cart")}
-					type="submit">Buy</button> */}
+        <button
+          className={productstyles.join}
+          // onClick={() => navigate("/Cart")}
+          onClick={() => navigate("/editproduct/" + product.id)}
+          // type="submit"
+        >
+          Edit
+        </button>
+
         <button
           onClick={deleteProduct}
           className={productstyles.join}
@@ -83,6 +89,7 @@ const Business = () => {
           <h1 className={styles.title}>Business</h1>
         </div>
       </div>
+
       <div className={styles.container}>
         <div className={styles.cardContainer} style={{ marginBottom: "10px" }}>
           <div className={styles.card}>
@@ -100,12 +107,14 @@ const Business = () => {
 								type="submit">View Ads</button> */}
             </div>
           </div>
+
           <div className={styles.card}>
             <div className={styles.cardContent}>
               <h3 className={styles.cardTitle}>Manage Products</h3>
               <button onClick={() => navigate("/addproduct")} type="submit">
                 Sell Products
               </button>
+
               {currentUser.role !== "business" ? (
                 <button onClick={() => navigate("/Product")} type="submit">
                   Buy Products
