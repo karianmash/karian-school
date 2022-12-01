@@ -49,7 +49,7 @@ const Profile = () => {
                 opacity: "0.7",
               }}
             >
-              {currentUser.first_name + " " + currentUser.last_name}
+              {currentUser.first_name + " " + currentUser.second_name}
             </td>
           </tr>
 

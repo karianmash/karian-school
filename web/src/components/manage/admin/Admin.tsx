@@ -33,21 +33,18 @@ const Admin = () => {
       }, 3000);
     }
   };
+
   const studentList = students.map((student) => (
     <div className={styles.clubCard} key={student.id}>
       <h5>{student.first_name + " " + student.second_name}</h5>
       <div className={styles.btnWrapper}>
-        {student.role == "student" ? (
-          <button
-            user-id={student.id}
-            onClick={() => navigate("/user/update/" + student.id)}
-            className={styles.exit}
-          >
-            Edit
-          </button>
-        ) : (
-          ""
-        )}
+        <button
+          user-id={student.id}
+          onClick={() => navigate("/user/update/" + student.id)}
+          className={styles.exit}
+        >
+          Edit
+        </button>
         <button
           className={styles.exit}
           user-id={student.id}
@@ -121,6 +118,7 @@ const Admin = () => {
 
         <div className={styles.clubWrapper}>
           <h4 style={{ textTransform: "capitalize" }}>{usersTitle}</h4>
+
           {studentList.length > 0 ? studentList : usersTitle + " empty"}
         </div>
 
