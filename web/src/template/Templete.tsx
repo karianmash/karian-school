@@ -17,6 +17,8 @@ import EditProduct from "../components/manage/bussiness/EditProduct";
 import EditAd from "../components/manage/ads/EditAd";
 import Advertisement from "../components/manage/student/Advertisement";
 
+import ProfileInfo from "../components/manage/profile/ProfileInfo";
+
 import Post from "../components/manage/post/Post";
 import Product from "../components/manage/product/Product";
 import Site from "../components/manage/site/Site";
@@ -68,6 +70,8 @@ const Templete = () => {
             <Route path="/addads" element={<AdsForm />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/chat/user/:user" element={<Chat />} />
+
+            <Route path="/profile" element={<ProfileInfo />} />
           </Route>
         </Route>
       </Routes>
