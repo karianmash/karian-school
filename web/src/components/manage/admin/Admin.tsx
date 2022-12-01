@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Admin.module.css";
 
+import BusinessBarChart from "../../charts/BusinessBarChart";
+import SchoolBarChart from "../../charts/SchoolBarChart";
+import StudentBarChart from "../../charts/StudentBarChart";
+
 const Admin = () => {
   const navigate = useNavigate();
   const [role, setRole] = useState("");
@@ -95,6 +99,7 @@ const Admin = () => {
       </div>
       <div className={styles.container} style={{ position: "relative" }}>
         <div style={{ position: "absolute" }}>{userMessage}</div>
+
         <div className={styles.btnWrapper}>
           <button onClick={chatURL}>Chat</button>
           <button onClick={fetchUsers} user-role={"student"}>
@@ -110,11 +115,51 @@ const Admin = () => {
           <button onClick={fetchUsers} user-role={"business"}>
             Business Owners
           </button>
-          <button onClick={() => navigate("/clubs")}>Clubs & Posts</button>
+          <button>Clubs & Posts</button>
         </div>
+
         <div className={styles.clubWrapper}>
           <h4 style={{ textTransform: "capitalize" }}>{usersTitle}</h4>
           {studentList.length > 0 ? studentList : usersTitle + " empty"}
+        </div>
+
+        {/* Students chart */}
+        <div
+          className={styles.clubWrapper}
+          style={{
+            marginTop: "3rem",
+            height: "280px",
+            width: "100%",
+          }}
+        >
+          <h4 style={{ textTransform: "capitalize" }}>Students Total</h4>
+          <StudentBarChart />
+        </div>
+
+        {/* Business people chart */}
+        <div
+          className={styles.clubWrapper}
+          style={{
+            marginTop: "3rem",
+            height: "280px",
+            width: "100%",
+          }}
+        >
+          <h4 style={{ textTransform: "capitalize" }}>Business Owner Total</h4>
+          <BusinessBarChart />
+        </div>
+
+        {/* School admin chart */}
+        <div
+          className={styles.clubWrapper}
+          style={{
+            marginTop: "3rem",
+            height: "280px",
+            width: "100%",
+          }}
+        >
+          <h4 style={{ textTransform: "capitalize" }}>School Admin Total</h4>
+          <SchoolBarChart />
         </div>
       </div>
     </>
