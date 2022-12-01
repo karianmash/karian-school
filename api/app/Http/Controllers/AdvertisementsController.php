@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Advertisements;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -47,6 +49,18 @@ class AdvertisementsController extends Controller
     public function EditAdvert($advert_id)
     {
         return Advertisements::where(['id' => $advert_id])->first();
+    }
+
+    public function BuyAdvert(Request $request)
+    {
+        $user_id = $request->user_id;
+        $ad_id = $request->ad_id;
+
+        Advertisements::where('id', $ad_id)->update(['user_id' => $user_id]);
+
+        return response()->json(
+            ['message' => 'Bought add successfully!']
+        );
     }
 
     public function UpdateAdvert(Request $request, $ad_id)

@@ -15,6 +15,7 @@ import Clubs from "../components/manage/clubs/Clubs";
 import ClubForm from "../components/manage/clubs/ClubForm";
 import EditProduct from "../components/manage/bussiness/EditProduct";
 import EditAd from "../components/manage/ads/EditAd";
+import Advertisement from "../components/manage/student/Advertisement";
 
 import Post from "../components/manage/post/Post";
 import Product from "../components/manage/product/Product";
@@ -44,7 +45,8 @@ const Templete = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/service" element={<Service />} />
             <Route path="/clubs" element={<Clubs />} />
-            {/* <Route path="/advertisement" element={<Advertisements />} /> */}
+            <Route path="/advertisement" element={<Advertisement />} />
+
             <Route path="/addclub" element={<ClubForm />} />
             <Route path="/editclub/:club" element={<EditClubForm />} />
             <Route path="/editproduct/:product" element={<EditProduct />} />
@@ -62,6 +64,7 @@ const Templete = () => {
             <Route path="/site" element={<Site />} />
             <Route path="/business" element={<Business />} />
             <Route path="/ads" element={<Ads />} />
+
             <Route path="/addads" element={<AdsForm />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/chat/user/:user" element={<Chat />} />

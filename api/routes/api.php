@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(AuthController::class)->group(function () {
+    Route::get('/users', 'GetAllUsers');
     Route::get('/users/{type}', 'GetUsers');
     Route::get('/user/{id}', 'GetUser');
     Route::post('user/update/{user_id}', 'updateUser');
@@ -35,6 +36,7 @@ Route::controller(ProductsController::class)->group(function () {
 });
 
 Route::controller(AdvertisementsController::class)->group(function () {
+    Route::post('buyadvert/', 'BuyAdvert');
     Route::post('advert', 'SaveAdvert');
     Route::get('advert/{id}', 'ViewProduct');
     Route::get('adverts', 'GetallAdverts');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +55,12 @@ class AuthController extends Controller
         $user = $request->user();
         $token = $user->createToken($request->email)->plainTextToken;
         return response()->json(['token' => $token, 'user' => $user], 200);
+    }
+
+    public function GetAllUsers()
+    {
+        $users = DB::select('select * from users');
+        return response()->json(['users' => $users]);
     }
 
     public function GetUsers($user_type)

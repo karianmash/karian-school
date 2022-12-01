@@ -13,6 +13,7 @@ const Product = () => {
   const navigate = useNavigate();
   const [count, setCartCount] = useState(0);
   const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
+
   useEffect(() => {
     getProducts();
     getCart();
@@ -102,6 +103,7 @@ const Product = () => {
           <h1 className={styles.title}>Products</h1>
         </div>
       </div>
+
       <div className={styles.container} style={{ position: "relative" }}>
         <div style={{ position: "absolute" }}>
           {userMessage !== "" ? (
@@ -122,7 +124,9 @@ const Product = () => {
           <button onClick={chatURL}>Chat</button>
           <button onClick={() => navigate("/product")}>Home</button>
           <button onClick={() => navigate("/clubs")}>Clubs</button>
-          {/* <button onClick={() => navigate("/ads")}>Advertisement</button> */}
+          <button onClick={() => navigate("/advertisement")}>
+            Advertisement
+          </button>
           <button onClick={() => navigate("/Cart")} type="button">
             {" "}
             {count > 0 ? <span>{count + "  "}</span> : ""}
@@ -130,6 +134,7 @@ const Product = () => {
             <span style={{ marginLeft: "10px" }}>Go to Cart</span>
           </button>
         </div>
+
         <div className={styles.clubWrapper}>{productList}</div>
       </div>
     </>

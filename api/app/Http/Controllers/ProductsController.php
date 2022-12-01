@@ -62,11 +62,20 @@ class ProductsController extends Controller
                 $file->move(public_path('uploads'), $name);
 
                 $updates = [
-                    'price' => $request->price, 'image' => $name, 'categories_id' => $request->categories_id, 'user_id' => $request->user_id
+                    'price' => $request->price,
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'image' => $name,
+                    'categories_id' => $request->categories_id,
+                    'user_id' => $request->user_id
                 ];
             } else {
                 $updates = [
-                    'price' => $request->price, 'categories_id' => $request->categories_id, 'user_id' => $request->user_id
+                    'price' => $request->price,
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'categories_id' => $request->categories_id,
+                    'user_id' => $request->user_id
                 ];
             }
 
