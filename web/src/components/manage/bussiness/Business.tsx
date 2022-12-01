@@ -72,16 +72,6 @@ const Business = () => {
     }
   };
 
-  //   const getMyAds = async () => {
-  //     const response = await axios.get(url + "advert/user/" + currentUser.id);
-  //     if (response.status == 200) {
-  //       console.log(response.data);
-  //       setAds(response.data);
-  //     } else {
-  //       // console.log(response);
-  //     }
-  //   };
-
   return (
     <>
       <div className={styles.banner}>
