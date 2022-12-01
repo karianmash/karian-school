@@ -120,7 +120,9 @@ const Product = () => {
         </div>
         <div className={styles.btnWrapper}>
           <button onClick={chatURL}>Chat</button>
-          <button onClick={() => navigate("/clubs")}>Clubs & Posts</button>
+          <button onClick={() => navigate("/product")}>Home</button>
+          <button onClick={() => navigate("/clubs")}>Clubs</button>
+          {/* <button onClick={() => navigate("/ads")}>Advertisement</button> */}
           <button onClick={() => navigate("/Cart")} type="button">
             {" "}
             {count > 0 ? <span>{count + "  "}</span> : ""}

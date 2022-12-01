@@ -12,6 +12,7 @@ import AdsForm from "../components/manage/ads/AdsForm";
 import Business from "../components/manage/bussiness/Business";
 import Cart from "../components/manage/cart/Cart";
 import Clubs from "../components/manage/clubs/Clubs";
+import ClubsList from "../components/manage/admin/ClubsList";
 import ClubForm from "../components/manage/clubs/ClubForm";
 import Post from "../components/manage/post/Post";
 import Product from "../components/manage/product/Product";
@@ -25,49 +26,46 @@ import ProductForm from "../components/manage/product/ProductForm";
 import UserUpdate from "../components/manage/update";
 import EditClubForm from "../components/manage/clubs/EditClubForm";
 
-
 const Templete = () => {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<OuterLayout />}>
-					<Route path="/" element={<Login />} />
-					<Route index path="/login" element={<Login />} />
-					<Route path="/signup" element={<Signup />} />
-					<Route
-						index
-						path="/forgot-password"
-						element={<ForgotPassoword />}
-					/>
-				</Route>
-				<Route path="/">
-					<Route path="/" element={<Layout />}>
-						<Route path="/about" element={<About />} />
-						<Route path="/contact" element={<Contact />} />
-						<Route path="/service" element={<Service />} />
-						<Route path="/clubs" element={<Clubs />} />
-						<Route path="/addclub" element={<ClubForm />} />
-						<Route path="/editclub/:club" element={<EditClubForm />} />
-						<Route path="/posts" element={<Post />} />
-						<Route path="/cart" element={<Cart />} />
-						<Route path="/product" element={<Product />} />
-						<Route path="/addproduct" element={<ProductForm />} />
-						<Route path="/admin" element={<Admin />} />
-						<Route path="/school" element={<Admin />} />
-						<Route path="/user/update/:user" element={<UserUpdate />} />
-						<Route path="/student" element={<Student />} />
-						<Route path="/addstudent" element={<StudentForm />} />
-						<Route path="/site" element={<Site />} />
-						<Route path="/business" element={<Business />} />
-						<Route path="/ads" element={<Ads />} />
-						<Route path="/addads" element={<AdsForm />} />
-						<Route path="/chat" element={<Chat />} />
-						<Route path="/chat/user/:user" element={<Chat />} />
-					</Route>
-				</Route>
-			</Routes>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<OuterLayout />}>
+          <Route path="/" element={<Login />} />
+          <Route index path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route index path="/forgot-password" element={<ForgotPassoword />} />
+        </Route>
+        <Route path="/">
+          <Route path="/" element={<Layout />}>
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/clubs" element={<Clubs />} />
+            <Route path="/clubslist" element={<ClubsList />} />
+            {/* <Route path="/advertisement" element={<Advertisements />} /> */}
+            <Route path="/addclub" element={<ClubForm />} />
+            <Route path="/editclub/:club" element={<EditClubForm />} />
+            <Route path="/posts" element={<Post />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/addproduct" element={<ProductForm />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/school" element={<Admin />} />
+            <Route path="/user/update/:user" element={<UserUpdate />} />
+            <Route path="/student" element={<Student />} />
+            <Route path="/addstudent" element={<StudentForm />} />
+            <Route path="/site" element={<Site />} />
+            <Route path="/business" element={<Business />} />
+            <Route path="/ads" element={<Ads />} />
+            <Route path="/addads" element={<AdsForm />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/chat/user/:user" element={<Chat />} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default Templete;

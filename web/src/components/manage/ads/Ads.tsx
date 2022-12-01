@@ -43,9 +43,6 @@ const Ads = () => {
         flexWrap: "wrap",
       }}
     >
-      {/* <div>
-        <img src={`${ad.image}`} />
-      </div> */}
       <img
         src={imageUrl + ad.image}
         alt="Cart"
