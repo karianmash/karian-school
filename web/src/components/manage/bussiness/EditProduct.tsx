@@ -11,7 +11,7 @@ const EditProduct = () => {
   const [userRes, setUserMessage] = useState("");
 
   const [name, setName] = useState("");
-  const [detail, setDetail] = useState("");
+  const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
@@ -33,7 +33,7 @@ const EditProduct = () => {
       console.log(prod, " ", prodId);
 
       setName(prod.name);
-      setDetail(prod.description);
+      setDescription(prod.description);
     }
   };
 
@@ -44,6 +44,8 @@ const EditProduct = () => {
     formData.append("price", price);
     formData.append("categories_id", category);
     formData.append("user_id", loggedUser.id);
+    formData.append("description", description);
+    formData.append("name", name);
 
     const saveResponse = await axios.post(
       baseUrl + "product/" + product,
@@ -101,6 +103,32 @@ const EditProduct = () => {
             </div>
 
             <div className={styles.field} style={{ marginTop: "1.5rem" }}>
+              <label>Name</label>
+              <input
+                type="text"
+                name="Product Name"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                placeholder="Enter Product Name"
+              />
+            </div>
+
+            <div className={styles.field}>
+              <label>Description</label>
+              <input
+                type="text"
+                name="Product Description"
+                value={description}
+                onChange={(e) => {
+                  setDescription(e.target.value);
+                }}
+                placeholder="Enter Product Description"
+              />
+            </div>
+
+            <div className={styles.field}>
               <label>product Image</label>
               <input
                 type="file"

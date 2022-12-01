@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Ads.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import productstyles from "../product/Product.module.css";
 
 const Ads = () => {
   const url = "http://localhost:8000/api/";
@@ -50,6 +51,12 @@ const Ads = () => {
       />
       <h2>{ad.title}</h2>
       <p> {ad.detail}</p>
+      <button
+        className={productstyles.join}
+        onClick={() => navigate("/editad/" + ad.id)}
+      >
+        Edit
+      </button>
       <div className={styles.btnWrapper}>
         <button ad-id={ad.id} onClick={deleteAdvert} type="submit">
           Delete
@@ -77,6 +84,7 @@ const Ads = () => {
     } else {
     }
   };
+
   return (
     <>
       <div className={styles.banner}>

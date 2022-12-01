@@ -14,6 +14,7 @@ import Cart from "../components/manage/cart/Cart";
 import Clubs from "../components/manage/clubs/Clubs";
 import ClubForm from "../components/manage/clubs/ClubForm";
 import EditProduct from "../components/manage/bussiness/EditProduct";
+import EditAd from "../components/manage/ads/EditAd";
 
 import Post from "../components/manage/post/Post";
 import Product from "../components/manage/product/Product";
@@ -47,6 +48,7 @@ const Templete = () => {
             <Route path="/addclub" element={<ClubForm />} />
             <Route path="/editclub/:club" element={<EditClubForm />} />
             <Route path="/editproduct/:product" element={<EditProduct />} />
+            <Route path="/editad/:ad" element={<EditAd />} />
 
             <Route path="/posts" element={<Post />} />
             <Route path="/cart" element={<Cart />} />

@@ -85,6 +85,7 @@ const ProductForm = () => {
                 <option value="5">Household Care</option>
               </select>
             </div>
+
             <div className={styles.field}>
               <label>Name</label>
               <input
@@ -97,6 +98,7 @@ const ProductForm = () => {
                 placeholder="Enter Product Name"
               />
             </div>
+
             <div className={styles.field}>
               <label>Description</label>
               <input
@@ -109,6 +111,7 @@ const ProductForm = () => {
                 placeholder="Enter Product Description"
               />
             </div>
+            
             <div className={styles.field}>
               <label>Product Image</label>
               <input
