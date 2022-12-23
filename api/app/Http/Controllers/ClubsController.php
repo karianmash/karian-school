@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-1
+
 use App\Models\Clubs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
